@@ -4,7 +4,7 @@
 (function () {
 
     var Component = ng.core.Component;
-    var NgModule =  ng.core.NgModule;
+    var NgModule = ng.core.NgModule;
     var BrowserModule = ng.platformBrowser.BrowserModule;
     var platformBrowserDynamic = ng.platformBrowserDynamic.platformBrowserDynamic();
     var Class = ng.core.Class;
@@ -38,12 +38,14 @@
                    <second></second>`
 
     }).Class({
-        constructor: function () {}
+        constructor: function AppComponent() {
+        }
     });
 
     var AppModule = NgModule({
         imports: [BrowserModule],
         declarations: [AppComponent, SecondComponent],
+        providers: [QuoteService],
         bootstrap: [AppComponent]
     }).Class({
         constructor: function () {
@@ -52,27 +54,27 @@
 
     platformBrowserDynamic.bootstrapModule(AppModule);
 
-    var quotes = [
-            {
-                'line':"Życie jest jak pudełko czekoladek - nigdy nie wiesz, co ci się trafi.",
-                'author':"Forrest Gump"
-            },
-            {
-                'line':" świat się zmienia, słońce zachodzi a wódka się kończy.",
-                'author':"Andrzej Sapkowski"
-            },
-            {
-                'line':"Prawo pędzenia bimbru jest prawem człowieka.",
-                'author':"Kroniki Jakuba Wędrowycza"
-            },
-            {
-                'line':" Rosjanie maja trzy waluty: ruble, dolary i wódkę.",
-                'author':"Władimir Żelwis "
-            },
-            {
-                'line':"Panie Boże, lubiłem dżem truskawkowy/ I ciemną słodycz kobiecego ciała./ Jak też wódkę mrożoną, śledzie w oliwie.",
-                'author':"Czesław Miłosz"
-            }
-        ]
+    var quotes2 = [
+        {
+            'line': "Życie jest jak pudełko czekoladek - nigdy nie wiesz, co ci się trafi.",
+            'author': "Forrest Gump"
+        },
+        {
+            'line': " świat się zmienia, słońce zachodzi a wódka się kończy.",
+            'author': "Andrzej Sapkowski"
+        },
+        {
+            'line': "Prawo pędzenia bimbru jest prawem człowieka.",
+            'author': "Kroniki Jakuba Wędrowycza"
+        },
+        {
+            'line': " Rosjanie maja trzy waluty: ruble, dolary i wódkę.",
+            'author': "Władimir Żelwis "
+        },
+        {
+            'line': "Panie Boże, lubiłem dżem truskawkowy/ I ciemną słodycz kobiecego ciała./ Jak też wódkę mrożoną, śledzie w oliwie.",
+            'author': "Czesław Miłosz"
+        }
+    ]
 
 })();
